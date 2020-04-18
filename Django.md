@@ -1,14 +1,14 @@
-# Django CheatSheet
+# Django Cheat Sheet
 
 Some tricks I've taken note of during Django projects development.
 
-**Index**
-- [ModelField](#ModelField) 
+**Table of contents**
+- [Model Field](#Model Field) 
 - [QuerySet](#QuerySets) 
-- [UsefulModules](#OtherStuff)
+- [Useful Modules](#Useful Modules)
     - [Datetime](#Datetime)
 
-## ModelField
+## Model Field
 **Choices**
 Model field definition on *models*
 ```Python
@@ -52,7 +52,7 @@ Get list of elements of a specific attribute for a model
 <modelName>.objects.all().values_list(<attrName>, flat=True)
 ```
 
-## UsefulModules
+## Useful Modules
 
 ### Datetime
 [Python documentation on this library](https://docs.python.org/3/library/datetime.html) 
@@ -72,3 +72,7 @@ timezone.now()
 <fieldName> = models.DateTimeField(default=timezone.now)
 ```
 
+
+## Sources
+
+- [Django Documentation](https://docs.djangoproject.com/en/3.0/)
