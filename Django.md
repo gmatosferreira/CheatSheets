@@ -3,9 +3,9 @@
 Some tricks I've taken note of during Django projects development.
 
 **Table of contents**
-- [Model Field](#Model Field) 
+- [Model Field](#Model_Field) 
 - [QuerySet](#QuerySets) 
-- [Useful Modules](#Useful Modules)
+- [Useful Modules](#Useful_Modules)
     - [Datetime](#Datetime)
 
 ## Model Field
