@@ -8,7 +8,7 @@ Some tricks I've taken note of during Django projects development.
 - [Useful Modules](#Useful_Modules)
     - [Datetime](#Datetime)
 
-## Model Field
+## Model_Field
 **Choices**
 Model field definition on *models*
 ```Python
@@ -52,7 +52,7 @@ Get list of elements of a specific attribute for a model
 <modelName>.objects.all().values_list(<attrName>, flat=True)
 ```
 
-## Useful Modules
+## Useful_Modules
 
 ### Datetime
 [Python documentation on this library](https://docs.python.org/3/library/datetime.html) 
