@@ -6,6 +6,8 @@
 - [Constructor](#Constructor)
 - [Methods](#Methods)
     - [Overloading](#Overloading)
+- [Encapsulation](#Encapsulation)
+- [Inheritance](#Inheritance)
 - [Sources](#Sources)
 
 
@@ -26,7 +28,7 @@ class Book:
 ## Attributes
 
 As I just mentioned, objects have attributes and depending on where they are declared, they can assume three types:
-- **Class attributes** Known in JAVA as static, they are shared by all class objects
+- **Class attributes** Known in Java as static, they are shared by objects of the class
 - **Instance attributes** Variable exclusive to one object  
 - **Dynamic attributes** Defined dinamically
 
@@ -37,8 +39,6 @@ The last one is one of the reasons that makes Python a very flexible language, a
 # Dynamic attribute
 <object>.wtvAttributeNeverDeclared = <someValue>
 ```
-
-
 
 ## Constructor 
 
@@ -66,13 +66,13 @@ from Book.py import Book
 book1 = Book("Book name", "Author name", 123, True)
 ```
 
-If you've learnend JAVA, probably *self* reminded you of *this*, and if that was the case you are not wrong!
+If you've learnend Java, probably *self* reminded you of *this*, and if that was the case you are not wrong!
 
 
 
 ## Methods
 
-*Self* specifies the instance on which you call the method. In JAVA, *this* is done by default, but here it is not the case. It is always used on all **instance methods**, the most common method type.
+*Self* specifies the instance on which you call the method. In Java, *this* is done by default, but here it is not the case. It is always used on all **instance methods**, the most common method type.
 
 But just like in variables, there are three types of methods:
 - **Instance methods** Able to access data and properties unique to each instance
@@ -108,7 +108,7 @@ def howManyBooks(cls):
 
 If you want to have a function that can accept several options as arguments, you can use default arguments, by providing arguments a default value when declaring them.
 
-Just like I did on the constructor up there with the variable *published* ;) With that, you can create objects giving or not this attribute as argument.
+Just like I did on the constructor up there with the variable *published*. With that, you can create objects giving or not this attribute as argument.
 ```Python
 book1 = Book("Book name", "Author name", 123, False) 
 # Will have published=False
@@ -118,10 +118,52 @@ book1 = Book("Book name", "Author name", 123)
 ``` 
 
 
+## Encapsulation
+
+To define variables and methods visibility Python uses a mechanism based on prefixing their name with one or double underscore.
+
+There are three types of visibility:
+
+- **Private** Visible and accessible only inside the class (one underscore)
+- **Protected** Acessible inside the class and subclasses (double underscore)
+- **Public** Default mode, everything is acessible inside and out of the class
+
+```Python
+# Private
+self._<varName>
+def _<funcName>:
+
+# Protected
+self.__<varName>
+def __<funcName>:
+
+# Public
+self.<varName>
+def <funcName>:
+```
+
+
 
 ## Inheritance
 
-*Soon available*
+Just like in Java, a class can extend another, inheriting its' attributes and methods, that can be overriden.
+
+To call the superclass constructor, there must be invoked *super()*.
+
+```Python
+class Manual(Book):
+
+    # Constructor
+    def __init__(self, name, author, issn, subject, published=True):
+        # Define Manual class attributes
+        self.subject = subject
+        # Call superclass constructor to define its' attributes
+        super().__init__(name, author, issn, published)
+
+    # Method overriding
+    def toString(self):
+        return f"Manual [subject={self.subject}\n\t{super.toString()}\n]"
+``` 
 
 
 
