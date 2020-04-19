@@ -7,7 +7,7 @@ Each cheat sheet is a result of information gathering from various sources that 
 
 
 ## Content 
-- [PythonObjectOriented](/Python Object Oriented.md) ![Generic badge](https://img.shields.io/badge/In_development-green.svg)
+- [PythonObjectOriented](/PythonObjectOriented.md) ![Generic badge](https://img.shields.io/badge/In_development-green.svg)
 - [Django](/Django.md) ![Generic badge](https://img.shields.io/badge/In_development-green.svg)
 
 
