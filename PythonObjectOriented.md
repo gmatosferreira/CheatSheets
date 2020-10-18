@@ -3,7 +3,7 @@
 **Table of contents**
 - [Class declaration](#Class_declaration)
 - [Attributes](#Attributes)
-- [Constructor](#Constructor)
+- [Default_methods](#Default_methods)
 - [Methods](#Methods)
     - [Overloading](#Overloading)
 - [Encapsulation](#Encapsulation)
@@ -40,9 +40,12 @@ The last one is one of the reasons that makes Python a very flexible language, a
 <object>.wtvAttributeNeverDeclared = <someValue>
 ```
 
-## Constructor 
 
-Speaking of which, the **constructor** is created with the method *__init__(self, arg1, arg2, ...)*. 
+
+## Default_methods 
+
+Speaking of which, the **constructor** is one of the default methods in Python and is defined through the method `__init__(self, arg1, arg2, ...)`.
+
 ```Python
 class Book:
     # Class attributes declaration
@@ -57,8 +60,12 @@ class Book:
         self.published = published
 ```
 
+> You might have noticed a strange notation on the argument "published". It has a default value!
+>
+> Learn more about it at [Methods](#Overloading).
+
 To create an object, you just need to call the constructor:
- 
+
 ```Python
 # If you are not using it in the same file, you must import it!
 from Book.py import Book
@@ -66,7 +73,19 @@ from Book.py import Book
 book1 = Book("Book name", "Author name", 123, True)
 ```
 
-If you've learnend Java, probably *self* reminded you of *this*, and if that was the case you are not wrong!
+>  If you've learnend Java, probably *self* reminded you of *this*, and if that was the case you are not wrong!
+
+Another default method is `__str__(self)`, which returns a string representation of the object for the end user (its goal is to be readable).
+
+The last one, but not least important is `__repr__(self)`. It also returns a string representation of the object, but instead of directed to the end user its purpose is for debugging and development. So, its goal is to unambiguous. 
+
+```python
+def __str__(self):
+    return f"{self.name} by {self.author}"
+
+def __repr__(self):
+    return f"Book[name={self.name}, author={self.author}, issn={self.issn}, published={self.published}]"
+```
 
 
 
@@ -104,18 +123,34 @@ def howManyBooks(cls):
 **Class methods** are usually used for factory methods, whereas **static methods** to create utility functions.
 
 
+
 ### Overloading
 
 If you want to have a function that can accept several options as arguments, you can use default arguments, by providing arguments a default value when declaring them.
 
 Just like I did on the constructor up there with the variable *published*. With that, you can create objects giving or not this attribute as argument.
+
+> This example uses the `__init__` method, but it applies to any other.
+
 ```Python
 book1 = Book("Book name", "Author name", 123, False) 
 # Will have published=False
 
 book1 = Book("Book name", "Author name", 123)
 # Will have published=True (default)
-``` 
+```
+
+When you have multiple default arguments and you don't want to specify them all, just identify which parameter you are passing.
+
+```python
+# Let's assume that the Book constructor has another default value: translated
+# def __init__(self, name, author, issn, published=True, translated=False)
+# We can call the constructor passing all the parameters
+book1 = Book("Book name", "Author name", 123, False, True)
+# But if we only want to say it has been translated, but don't want to say anything about being published?
+book1 = Book("Book name", "Author name", 123, translated=True)
+```
+
 
 
 ## Encapsulation
@@ -163,7 +198,7 @@ class Manual(Book):
     # Method overriding
     def toString(self):
         return f"Manual [subject={self.subject}\n\t{super.toString()}\n]"
-``` 
+```
 
 
 
