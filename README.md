@@ -9,11 +9,11 @@ Each cheat sheet is a result of information gathering from various sources that 
 ## Content 
 **On programming languages**
 
-- [Python Object Oriented](/PythonObjectOriented.md) ![Generic badge](https://img.shields.io/badge/Done-green.svg)![Generic badge](https://img.shields.io/badge/LastUpdate:Oct2020-grey.svg)
+- [Python Object Oriented](/PythonObjectOriented.md) ![Generic badge](https://img.shields.io/badge/Done-green.svg) ![Generic badge](https://img.shields.io/badge/LastUpdate:Oct2020-grey.svg)
 
 **On frameworks**
 
-- [Django](/Django.md) ![Generic badge](https://img.shields.io/badge/In_development-yellow.svg)
+- [Django](/Django.md) ![Generic badge](https://img.shields.io/badge/In_development-yellow.svg) ![Generic badge](https://img.shields.io/badge/LastUpdate:Oct2020-grey.svg)
 
 
 
