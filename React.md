@@ -1,5 +1,7 @@
 # React
 
+> Based on [freeCodeCamp online course](https://www.youtube.com/watch?v=DLX62G4lc44) and personal experience
+
 O React veio alterar o paradigma do desenvolvimento do *front-end* das aplicações.
 
 - Através da [virtualização do DOM](https://www.youtube.com/watch?v=BYbgopx44vo) o React gere de forma rápida e automatizada as alterações realizadas na *view*.
